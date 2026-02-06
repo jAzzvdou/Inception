@@ -14,7 +14,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - /home/jazevedo/42/Docker-Orchestration/data/wordpress:/var/www/html
+      - /home/jazevedo/data/wordpress:/var/www/html
       - ./requirements/nginx/conf:/etc/nginx/conf.d:ro
     environment:
       - SERVER_NAME=${SERVER_NAME}
@@ -76,11 +76,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/jazevedo/42/Docker-Orchestration/data/wordpress
+      device: /home/jazevedo/data/wordpress
 
   mariadb_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/jazevedo/42/Docker-Orchestration/data/mariadb
+      device: /home/jazevedo/data/mariadb
